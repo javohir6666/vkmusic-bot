@@ -1,0 +1,98 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <header>
+        <div class="user-info">
+            <div class="social-header">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+            
+            {% if user.is_authenticated %}
+            <form  method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="sutbmit" class="login-button">Logout <i class="fa-solid fa-right-to-bracket"></i></button>
+            </form>
+            {% else %}
+            <a href="{% url "login" %}" class="login-button">Login <i class="fa-solid fa-right-to-bracket"></i></a>
+            {% endif %}
+        </div>
+        
+        <h1>Instagram Downloader Service</h1>
+        <p>Download photos, videos, and stories from Instagram</p>
+        <form method="post">
+            {% csrf_token %}
+        <div class="search-bar">
+                <input type="text" name="url" id="url" placeholder="Enter Instagram URL...">
+                <button class="search-button" type="submit">
+                    <i class="fas fa-circle-down" style="color:white;"></i>
+                </button>
+            </div>
+        </form>
+    </header>
+    <main>
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <i class="fa fa-link"></i>
+                    <p>Copy the Instagram URL</p>
+                </div>
+                <div class="step">
+                    <i class="fa fa-paste"></i>
+                    <p>Paste it into the search bar</p>
+                </div>
+                <div class="step">
+                    <i class="fa fa-download"></i>
+                    <p>Click the download button</p>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="features">
+            <h2>Features</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <img src="{% static "./images/instagram.png" %}"class="profile-pic"  alt="Photos">
+                    <h3>Download Photos</h3>
+                    <p>High quality photo downloads</p>
+                </div>
+                <div class="feature-card">
+                    <img src="{% static "./images/instagram.png" %}" class="profile-pic" alt="Videos">
+                    <h3>Download Videos</h3>
+                    <p>Save videos to your device</p>
+                </div>
+                <div class="feature-card">
+                    <img src="{% static "./images/instagram.png" %}"class="profile-pic"  alt="Stories">
+                    <h3>Download Stories</h3>
+                    <p>Keep your favorite stories forever</p>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="testimonials">
+            <h2>What Our Users Say</h2>
+            <div class="testimonials-cards">
+                <div class="testimonial-card">
+                    <img src="{% static "./images/Atlas.png" %}" alt="User 1">
+                    <p>"This service is amazing! So easy to use."</p>
+                    <h4>- User 1</h4>
+                </div>
+                <div class="testimonial-card">
+                    <img src="{% static "./images/Atlas.png" %}" alt="User 2">
+                    <p>"I can now save all my favorite videos. Thanks!"</p>
+                    <h4>- User 2</h4>
+                </div>
+                <div class="testimonial-card">
+                    <img src="{% static "./images/Atlas.png" %}" alt="User 3">
+                    <p>"Perfect for keeping memorable stories."</p>
+                    <h4>- User 3</h4>
+                </div>
+            </div>
+            <hr>
+        </section>
+    </main>
+    {% endblock content %}

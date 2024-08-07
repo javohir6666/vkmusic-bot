@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Video</title>
+</head>
+<body>
+    <h1>Download Video</h1>
+    {% if video_url %}
+        <video width="320" height="240" controls>
+            <source src="{{ video_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br>
+        <a href="{{ video_url }}" download>Download Video</a>
+    {% else %}
+        <p>No video found for this link.</p>
+    {% endif %}
+
+    <h2>Your Downloaded Items</h2>
+    {% if downloaded_items %}
+        <ul>
+            {% for item in downloaded_items %}
+            <video width="320" height="240" controls>
+                <source src="{{ video_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No downloaded items found.</p>
+    {% endif %}
+</body>
+</html>

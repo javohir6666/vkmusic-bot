@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<header>
+    <div class="user-info">
+        <div class="social-header">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram"></i></a>
+        </div>
+        
+        {% if user.is_authenticated %}
+        <form  method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="sutbmit" class="login-button">Logout <i class="fa-solid fa-right-to-bracket"></i></button>
+        </form>
+        {% else %}
+        <a href="{% url "login" %}" class="login-button">Login <i class="fa-solid fa-right-to-bracket"></i></a>
+        {% endif %}
+    </div>
+    
+    <h1>Instagram Downloader Service</h1>
+    <p>Download photos, videos, and stories from Instagram</p>
+    <form method="post">
+        {% csrf_token %}
+    <div class="search-bar">
+            <input type="text" name="url" id="url" placeholder="Enter Instagram URL...">
+            <button class="search-button" type="submit">
+                <i class="fas fa-circle-down" style="color:white;"></i>
+            </button>
+        </div>
+    </form>
+</header>
+<main>
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <i class="fa fa-link"></i>
+                <p>Copy the Instagram URL</p>
+            </div>
+            <div class="step">
+                <i class="fa fa-paste"></i>
+                <p>Paste it into the search bar</p>
+            </div>
+            <div class="step">
+                <i class="fa fa-download"></i>
+                <p>Click the download button</p>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="features">
+        <h2>Downloaded Items</h2>
+        <div class="feature-cards">
+            <table>
+                <tr>
+                  <th>№</th>
+                  <th>Link</th>
+                  <th>Is_valid</th>
+                </tr>
+                {% if links %}
+                {% for link in links|slice:10 %}  
+                <tr>
+                  <td>{{forloop.counter}}</td>
+                  <td>{{link.url}}</td>
+                  <td>{{link.is_valid}}</td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <h4>No links for this user</h4>
+                {% endif %}
+              </table>
+        </div>
+    </section>
+    <hr>
+</main>
+
+{% endblock content %}

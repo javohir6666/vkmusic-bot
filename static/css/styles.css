@@ -1,0 +1,295 @@
+/* styles.css */
+a{
+    text-decoration: none!important;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(135deg, #333399, #FF00CC);
+    color: #ffffff;
+}
+
+header {
+    padding: 20px;
+    color: #ffffff;
+}
+
+.social-header{
+    justify-content: left;
+    align-items: center;
+}
+.social-header a {
+    color: #ffff;
+    font-size: large;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-header img {
+    width: 30px;
+    height: 30px;
+}
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.login-button {
+    text-decoration: none;
+    background-color: #4A00E0;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.new-chat:hover {
+    background-color: #0056b3;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-bar input {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: #4A00E0;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+}
+
+.search-button img {
+    width: 20px;
+    height: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin: 40px 0;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.step {
+    margin: 20px;
+}
+
+.steps img {
+    width: 100px;
+    height: 100px;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background-color: #ffffff;
+
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex-basis: 200px;
+    cursor: pointer;
+    color: #333;
+}
+
+.feature-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex-basis: 200px;
+    color: #333;
+}
+
+.testimonial-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+footer {
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex-basis: 30%;
+    padding: 20px;
+}
+
+.footer-section h2 {
+    margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section ul, .footer-section a {
+    color: #ffffff;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.download-section {
+    margin: 50px 0;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+.instructions {
+    text-align: left;
+    margin: 50px auto;
+    max-width: 600px;
+}
+
+.instructions ol {
+    text-align: left;
+    margin-left: 20px;
+}
+
+
+/* Login and Register section */
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-form label {
+    margin: 10px 0 5px;
+}
+
+.auth-form input {
+    width: 20%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: 1px solid #cccccc;
+    outline: none;
+}
+
+.auth-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.auth-button:hover {
+    background-color: #0056b3;
+}
+
+.login-section, .register-section {
+    padding: 50px 0;
+}
+
+table{
+    color: black;
+}
+table th{
+    background: #116315;
+}
+table td{
+    background:#fff;
+    border-bottom: 1px solid #ddd;
+}
